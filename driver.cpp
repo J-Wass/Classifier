@@ -1,11 +1,16 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-#include "neural_net.cpp"
+#include "neuralnet.cpp"
+using namespace std;
 
 int main(){
-  std::vector<int> hidden_layer_sizes{4,2};
-  std::unique_ptr<Neural_Net> net(new Neural_Net(hidden_layer_sizes, 4, 2));
-  std::cout << net->to_string() << "\n";
+  vector<int> hidden_layer_shape{2,2};
+  NeuralNet *net = new NeuralNet(5u, 3u, hidden_layer_shape);
+  //build dataset
+  //train on dataset
+  //fit on something
+  cout << net->to_string() << "\n";
+  delete net;
   return 0;
 }
